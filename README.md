@@ -1,4 +1,4 @@
-# 🎙️ Orenda Voice Stock: Automação de Estoque por Comando de Voz
+# 🎙️ Orenda Voice Stock: Automação de Estoque por Comando de Voz (Projeto experimental)
 
 O Orenda Voice Stock é um script inteligente desenvolvido em Python para otimização de fluxos logísticos e gerenciamento de inventário. O sistema utiliza captura e transcrição de áudio em tempo real, processamento de texto via Expressões Regulares (Regex), manipulação de dados com Pandas e persistência em banco de dados relacional SQLite.
 
@@ -16,7 +16,7 @@ O objetivo do projeto é substituir o preenchimento manual de planilhas por uma 
 
 O fluxo do programa foi desenhado em três etapas sequenciais:
 
-1.  Captura e Transcrição (Voice-to-Text): O script calibra o microfone para isolar ruídos de fundo e aguarda o comando de voz em português (Ex: *"maçã 3 unidades, banana 4 unidades"*). O áudio é enviado e transcrito instantaneamente.
+1.  Captura e Transcrição (Voice-to-Text): O script calibra o microfone para isolar ruídos de fundo e aguarda o comando de voz em português (Ex: "maçã 3 unidades, banana 4 unidades"). O áudio é enviado e transcrito instantaneamente.
 2.  Processamento de Linguagem com Regex: O texto bruto é tratado por uma expressão regular que identifica os blocos de produtos e suas respectivas quantidades numéricas, limpando palavras sobressalentes (como "unidade" ou "unidades") e isolando as variáveis necessárias.
 3.  Inteligência de Banco de Dados (SQL): 
        Caso o produto já exista na tabela, o script realiza um `UPDATE`, somando incrementalmente a nova quantidade ao saldo atual.
